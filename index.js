@@ -1,8 +1,10 @@
 import express from 'express';
+import cors from 'cors';
 import {lista, busca, buscaId} from './servicos/servicos.js';
 
 
 const app = express();
+app.use(cors());
 
 app.get('/uf', (req, res) => {
     const nome = req.query.busca;
